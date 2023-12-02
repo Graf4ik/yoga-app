@@ -8,6 +8,12 @@ import {
     ZoomControl
 } from '@pbe/react-yandex-maps';
 
+const defaultState = {
+    title: "ГЭС-2",
+    center: [55.742751, 37.612732],
+    zoom: 12,
+};
+
 const LocationMap:FC = () => {
     return (
         <>

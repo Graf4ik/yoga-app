@@ -1,0 +1,22 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+
+  .tel {
+    color: black;
+  }
+
+  .whatsApp {
+    color: rgb(37, 211, 102);
+  }
+
+  .telegram {
+    color: rgb(43, 158, 204);
+  }
+
+  .socials {
+    font-weight: normal;
+    color: black;
+  }
+}

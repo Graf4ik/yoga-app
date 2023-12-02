@@ -1,42 +1,97 @@
-export const photos = [
+import {Photo} from "./types";
+
+const breakpoints = [3840, 2400, 1080, 640, 384, 256, 128, 96, 64, 48];
+const unsplashPhotos: Photo[] = [
     {
         src: "/photos/8.jpg",
-        width: 800,
-        height: 600
+        width: 1280,
+        height: 960
     },
     {
         src: "/photos/9.jpg",
-        width: 1600,
-        height: 900
+        width: 1280,
+        height: 960
     },
     {
         src: "/photos/10.jpg",
-        width: 1600,
-        height: 900
+        width: 1204,
+        height: 1280
     },
     {
         src: "/photos/11.jpg",
-        width: 800,
-        height: 600
-    },
-    {
-        src: "/photos/12.jpg",
-        width: 1600,
-        height: 900
+        width: 1023,
+        height: 1280
     },
     {
         src: "/photos/13.jpg",
-        width: 1600,
-        height: 900
+        width: 959,
+        height: 1280
+    },
+    {
+        src: "/photos/12.jpg",
+        width: 1024,
+        height: 1280
     },
     {
         src: "/photos/14.jpg",
-        width: 800,
-        height: 600
+        width: 960,
+        height: 1280
     },
     {
         src: "/photos/15.jpg",
-        width: 1600,
-        height: 900
+        width: 960,
+        height: 1280
+    },
+    {
+        src: "/photos/16.jpg",
+        width: 960,
+        height: 1280
+    },
+    {
+        src: "/photos/17.jpg",
+        width: 768,
+        height: 1024
+    },
+    {
+        src: "/photos/18.jpg",
+        width: 768,
+        height: 1024
+    },
+    {
+        src: "/photos/19.jpg",
+        width: 768,
+        height: 1024
+    },
+    {
+        src: "/photos/20.jpg",
+        width: 768,
+        height: 1024
+    },
+    {
+        src: "/photos/21.jpg",
+        width: 768,
+        height: 1024
     },
 ];
+
+export const photos = unsplashPhotos.map((photo: Photo) => {
+    const width = breakpoints[0];
+    const src = photo.src;
+    const height = (photo.height / photo.width) * width;
+
+    return {
+        src: src,
+        width,
+        height,
+        images: breakpoints.map((breakpoint: number) => {
+            const height = Math.round((photo.height / photo.width) * breakpoint);
+            return {
+                src: src,
+                width: breakpoint,
+                height,
+            };
+        }),
+    };
+});
+
+export default photos;
