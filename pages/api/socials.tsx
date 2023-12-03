@@ -1,7 +1,5 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-// import type { NextApiRequest, NextApiResponse } from 'next'
-import { socials } from "./data/socials";
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse } from 'next';
+import { socials } from './data/socials';
 
 interface Data {
   id: number;
@@ -10,11 +8,11 @@ interface Data {
 }
 
 export default function handler(
-    req: NextApiRequest,
-    res: NextApiResponse<Data[]>
+  req: NextApiRequest,
+  res: NextApiResponse<Data[]>,
 ) {
   console.log(req);
   if (req.method === 'GET') {
     res.status(200).json(socials);
-  };
+  }
 }
