@@ -1,4 +1,4 @@
-import { Photo } from './types';
+import { Photo } from './interfaces';
 
 const breakpoints = [3840, 2400, 1080, 640, 384, 256, 128, 96, 64, 48];
 const unsplashPhotos: Photo[] = [

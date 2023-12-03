@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import Head from 'next/head';
 import Heading from 'components/Heading/Heading';
+import { Box } from '@chakra-ui/react';
 
 const Error = () => {
   const router = useRouter();
@@ -13,13 +14,13 @@ const Error = () => {
   }, [router]);
 
   return (
-    <div>
+    <Box>
       <Head>
         <title>Error</title>
       </Head>
       <Heading text="404" />
       <Heading text="Something is going wrong..." />
-    </div>
+    </Box>
   );
 };
 

@@ -1,21 +1,23 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import Heading from 'components/Heading/Heading';
-import styles from 'styles/About.module.scss';
+import {
+  Box, Image, Text,
+} from '@chakra-ui/react';
+import styles from './About.module.scss';
 
 const About = () => (
   <>
     <Head>
-      <title>О себе</title>
+      <title>Обо мне</title>
     </Head>
-    <Heading text="О себе " />
-    <div className={styles.about}>
-      <div className={styles.wrapper__Block}>
-        <Image src="/photos/1.jpg" alt="yoga" width={450} height={600} />
-      </div>
-      <div className={styles.wrapper__Block}>
-        <div className={styles.home__inner}>
-          <p>
+    <Heading text="Обо мне" />
+    <Box className={styles.about}>
+      <Box className={styles.about__block}>
+        <Image className={styles.about__image} src="/photos/1.jpg" alt="yoga" />
+      </Box>
+      <Box className={styles.about__block}>
+        <Box className={styles.about__inner}>
+          <Text className={styles.about__text}>
             В йогу пришла  более 9 лет назад, а пришла потому что, стал пропадать внутренний интере
             к себе и к жизни. Поэтому на собственном опыте знаю, как техники йоги трансформируют
             сознание, а как следствие трансформируют внешнюю жизнь. Внешнее - отражение внутреннего.
@@ -24,32 +26,9 @@ const About = () => (
             ведь йога — это наука, не имеющая границ.
 
             На моих классах будем осваивать:
-            {/* <List spacing={3}> */}
-            {/*    <ListItem> */}
-            {/*        <ListIcon as={MdCheckCircle} color='green.500' /> */}
-            {/*        Lorem ipsum dolor sit amet, consectetur adipisicing elit */}
-            {/*    </ListItem> */}
-            {/*    <ListItem> */}
-            {/*        <ListIcon as={MdCheckCircle} color='green.500' /> */}
-            {/*        Assumenda, quia temporibus eveniet a libero incidunt suscipit */}
-            {/*    </ListItem> */}
-            {/*    <ListItem> */}
-            {/*        <ListIcon as={MdCheckCircle} color='green.500' /> */}
-            {/*        Quidem, ipsam illum quis sed voluptatum quae eum fugit earum */}
-            {/*    </ListItem> */}
-            {/*    /!* You can also use custom icons from react-icons *!/ */}
-            {/*    <ListItem> */}
-            {/*        <ListIcon as={MdSettings} color='green.500' /> */}
-            {/*        Quidem, ipsam illum quis sed voluptatum quae eum fugit earum */}
-            {/*    </ListItem> */}
-            {/* </List> */}
-            <br />
             • асаны хатха-йоги, где большое внимание уделяю грамотной отстройке и травмобезопасности;
-            <br />
             • базовые типы дыхания, делая свои вдохи и выдохи более осознанными;
-            <br />
             • техники медитации.
-            <br />
 
             Свои практики я направляю на гармонизацию внутреннего и внешнего пространства ученика,
             делюсь своим опытом и знаниями. Наполняя свою жизнь качественными эмоциями, ощущая тонкие вибрации,
@@ -66,10 +45,10 @@ const About = () => (
             литература; прогулки на природе; путешествия; преподавание и обратная связь от учеников; душевные беседы.
 
             Для меня йога — это путь к себе. Познание своей многогранности, уникальности и своей божественной природы.
-          </p>
-        </div>
-      </div>
-    </div>
+          </Text>
+        </Box>
+      </Box>
+    </Box>
   </>
 );
 

@@ -1,0 +1,43 @@
+.about {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  .about__block {
+    display: flex;
+    justify-content: center;
+
+    .about__inner {
+      h1 {
+        text-align: left;
+      }
+      .about__text {
+        color: #000;
+      }
+    }
+
+    &:last-child {
+      width: 620px;
+    }
+  }
+
+  .about__image {
+    max-width: 500px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1160px) {
+  .about {
+    justify-content: center;
+
+    .about__block {
+
+      &:last-child {
+        width: 1000px;
+        margin-top: 50px;
+      }
+    }
+  }
+}

@@ -1,9 +1,9 @@
 import { FC } from 'react';
-import styles from 'styles/Home.module.scss';
 import {
   Box, Image, Popover, PopoverBody, PopoverContent, PopoverTrigger, Tooltip,
 } from '@chakra-ui/react';
 import { SocialIcon } from 'react-social-icons';
+import styles from 'pages/home/Home.module.scss';
 
 const Messengers:FC = () => (
   <div className={styles.messengers}>

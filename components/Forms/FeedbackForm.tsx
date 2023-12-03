@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import {
+  Box,
   Button,
-  Container,
   FormControl,
   FormErrorMessage,
   FormLabel,
@@ -10,8 +10,8 @@ import {
   Textarea,
   useToast,
 } from '@chakra-ui/react';
-import { IFormContact } from 'constants/types';
 import { sendContactForm } from 'lib/api';
+import { IFormContact } from 'constants/interfaces';
 
 const initValues: IFormContact = {
   name: '',
@@ -71,7 +71,7 @@ const FeedbackForm: FC = () => {
   const onBlur = ({ target }) => setTouched((prev) => ({ ...prev, [target.name]: true }));
 
   return (
-    <Container maxW="450px" mt={12}>
+    <Box>
       {error && (
         <Text color="red.300" my={4} fontSize="xl">
           {error}
@@ -156,7 +156,7 @@ const FeedbackForm: FC = () => {
       >
         Отправить
       </Button>
-    </Container>
+    </Box>
   );
 };
 

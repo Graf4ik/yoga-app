@@ -7,6 +7,7 @@ import {
   GeolocationControl,
   ZoomControl,
 } from '@pbe/react-yandex-maps';
+import styles from './LocationMap.module.scss';
 
 const defaultState = {
   title: 'ГЭС-2',
@@ -17,8 +18,7 @@ const defaultState = {
 const LocationMap:FC = () => (
   <YMaps>
     <Map
-      width="40vw"
-      height="40vh"
+      className={styles.map}
       defaultState={defaultState}
     >
       <Placemark geometry={[55.742751, 37.612732]} color="primary" />

@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react';
-import styles from 'styles/Home.module.scss';
+import styles from 'pages/home/Home.module.scss';
+import { Box } from '@chakra-ui/react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
@@ -10,7 +11,7 @@ type LayoutProps = {
 const Layout:FC<LayoutProps> = ({ children }) => (
   <>
     <Header />
-    <div className={styles.layout}>{children}</div>
+    <Box className={styles.layout}>{children}</Box>
     <Footer />
   </>
 );

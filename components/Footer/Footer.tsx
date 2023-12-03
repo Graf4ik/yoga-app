@@ -1,8 +1,9 @@
 import { FC } from 'react';
+import { Text } from '@chakra-ui/react';
 
 const Footer:FC = () => (
   <footer>
-    <p>Created by Graf</p>
+    <Text>Created by Graf</Text>
   </footer>
 );
 

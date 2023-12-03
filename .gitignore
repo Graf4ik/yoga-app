@@ -15,6 +15,9 @@
 # production
 /build
 
+# Webstorm enviroment
+/.idea
+
 # misc
 .DS_Store
 *.pem

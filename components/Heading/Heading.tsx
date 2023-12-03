@@ -1,10 +1,11 @@
 import { FC } from 'react';
-import styles from '../../styles/Home.module.scss';
+import styles from 'pages/home/Home.module.scss';
+import { Box } from '@chakra-ui/react';
 
 interface HeadingProps {
   text: string;
 }
 
-const Heading:FC<HeadingProps> = ({ text }) => <div className={styles.title}>{text}</div>;
+const Heading:FC<HeadingProps> = ({ text }) => <Box className={styles.title}>{text}</Box>;
 
 export default Heading;
