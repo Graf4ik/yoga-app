@@ -36,6 +36,7 @@ const Home = () => (
         <Image
           className={styles.questionImg}
           src="/photos/7.jpg"
+          alt="questionImg"
         />
       </Box>
       <Box className={styles.question__block}>

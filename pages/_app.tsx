@@ -1,9 +1,10 @@
 import 'public/styles/globals.scss';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { ChakraProvider } from '@chakra-ui/provider';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Layout from 'components/Layout/Layout';
 import { theme } from 'shared/chakra/theme';
-import { ChakraProvider } from '@chakra-ui/provider';
 import styles from './home/Home.module.scss';
 
 const App = ({ Component, pageProps }: AppProps) => (
