@@ -15,8 +15,4 @@ export const theme = extendTheme(
       body: `Slabo 27px, ${base.fonts?.body}`,
     },
   },
-  withDefaultVariant({
-    variant: 'ghost',
-    components: ['Button', 'IconButton'],
-  }),
 );
