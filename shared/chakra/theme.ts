@@ -10,11 +10,6 @@ const config: ThemeConfig = {
 export const theme = extendTheme(
   {
     config,
-    colors: {
-      'gray.dark': '#1C1C1C',
-      'gray.light': '#646464',
-      'brand.red': '#E14949',
-    },
     fonts: {
       heading: `Slabo 27px, ${base.fonts?.heading}`,
       body: `Slabo 27px, ${base.fonts?.body}`,
