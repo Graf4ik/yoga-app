@@ -50,11 +50,11 @@ const Home = () => (
         <LocationMap />
       </Box>
       <Box className={styles.contacts__block}>
-        <Text fontWeight="bold" color="#420670">Адрес проведения занятий:</Text>
+        <Text className={styles.contacts__title}>Адрес проведения занятий:</Text>
         <Text>г. Москва, Болотная наб., 15</Text>
-        <Text fontWeight="bold" color="#420670">Телефон:</Text>
+        <Text className={styles.contacts__title}>Телефон:</Text>
         <Text>+7916999999</Text>
-        <Text fontWeight="bold" color="#420670">E-mail:</Text>
+        <Text className={styles.contacts__title}>E-mail:</Text>
         <Text>katerina-grafova@mail.ru</Text>
       </Box>
     </Box>

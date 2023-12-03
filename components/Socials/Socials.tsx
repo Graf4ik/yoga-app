@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styles from '../../pages/home/Home.module.scss';
-import { SocialsType } from '../../constants/interfaces';
+import { SocialsType } from '../../shared/interfaces/interfaces';
 
 interface SocialsTypeProps {
   socials: SocialsType[],

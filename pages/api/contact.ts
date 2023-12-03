@@ -6,7 +6,6 @@ interface Contact {
   email?: string;
   tel?: string;
   message?: string;
-  error?: {};
   success?: boolean;
 }
 

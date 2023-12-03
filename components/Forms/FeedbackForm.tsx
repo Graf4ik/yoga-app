@@ -11,7 +11,7 @@ import {
   useToast,
 } from '@chakra-ui/react';
 import { sendContactForm } from 'lib/api';
-import { IFormContact } from 'constants/interfaces';
+import { IFormContact } from '../../shared/interfaces/interfaces';
 
 const initValues: IFormContact = {
   name: '',

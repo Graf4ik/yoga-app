@@ -7,7 +7,7 @@ import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
 import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
 import { PhotoAlbum } from 'react-photo-album';
-import { photos } from 'constants/photos';
+import { photos } from 'shared/constants/photos';
 
 const PhotoGallery:FC = () => {
   const [index, setIndex] = useState<number>(-1);

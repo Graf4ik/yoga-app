@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   padding: 0;
@@ -5,32 +9,16 @@ body {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  //font-family: 'ALS Sector Regular Regular', sans-serif;
   color: #fff;
   font-size: 20px;
+  font-weight: 400;
 }
 
 main {
   position: relative;
   min-height: 76vh;
   margin: 0 50px 50px 50px;
-}
-
-footer {
-  background-color: #000;
-  margin-top: 20px;
-  height: 35px;
-  color: #fff;
-  text-align: center;
-  font-size: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
 }
 
 a {

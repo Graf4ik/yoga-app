@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FC } from 'react';
-import { Navigation } from '../../constants/interfaces';
+import { Navigation } from '../../shared/interfaces/interfaces';
 import styles from './Navbar.module.scss';
 
 const navigation: Navigation[] = [

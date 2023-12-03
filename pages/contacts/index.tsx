@@ -3,7 +3,7 @@ import { FC } from 'react';
 import Heading from 'components/Heading/Heading';
 import Socials from 'components/Socials/Socials';
 import { Box, Link, Spacer } from '@chakra-ui/react';
-import { SocialsType } from 'constants/interfaces';
+import { SocialsType } from '../../shared/interfaces/interfaces';
 import styles from './Contacts.module.scss';
 
 interface SocialsTypeProps {
