@@ -86,7 +86,7 @@
   height: 55px;
   position: fixed;
   bottom: 50px;
-  right: 60px;
+  right: 40px;
 
   .iconMessage {
     height: 30px;
@@ -132,6 +132,9 @@
       }
     }
   }
+  .messengers {
+    right: 20px;
+  }
 }
 
 @media (max-width: 560px) {
@@ -143,6 +146,9 @@
         }
       }
     }
+  }
+  .messengers {
+    right: 10px;
   }
 }
 

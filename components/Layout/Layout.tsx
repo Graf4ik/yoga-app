@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
-import styles from 'pages/home/Home.module.scss';
 import { Box } from '@chakra-ui/react';
+import styles from './Layout.module.scss';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 

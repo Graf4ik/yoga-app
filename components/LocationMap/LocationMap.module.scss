@@ -8,3 +8,15 @@
     width: 90vw;
   }
 }
+
+@media (max-width: 560px) {
+  .map {
+    width: 75vw;
+  }
+}
+
+@media (max-width: 370px) {
+  .map {
+    width: 80vw;
+  }
+}
