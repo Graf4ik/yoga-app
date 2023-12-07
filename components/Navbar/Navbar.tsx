@@ -39,6 +39,7 @@ const Navbar:FC<any> = () => {
           </Link>
         ))}
       </div>
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
       <div className={styles.navToggle} onClick={toggleClass}>
         <span className={isActive ? `${styles.navToggleItem} ${styles.active}` : styles.navToggleItem} />
       </div>
