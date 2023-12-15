@@ -4,7 +4,7 @@ import Heading from 'components/Heading/Heading';
 import Socials from 'components/Socials/Socials';
 import { Box } from '@mui/material';
 import Link from 'next/link';
-import { SocialsType } from '../../shared/interfaces/interfaces';
+import { SocialsType } from 'shared/interfaces/interfaces';
 import styles from './Contacts.module.scss';
 
 interface SocialsTypeProps {

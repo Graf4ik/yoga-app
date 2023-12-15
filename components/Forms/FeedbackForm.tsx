@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { sendContactForm } from 'lib/api';
 import {
-  Box, Button, FormControl, SnackbarOrigin, TextField,
+  Box, Button, FormControl, TextField,
 } from '@mui/material';
 import { IFormContact } from 'shared/interfaces/interfaces';
 
@@ -18,25 +18,23 @@ const initState = { values: initValues };
 
 const FeedbackForm: FC = () => {
   const [state, setState] = React.useState<any>(initState);
-  const [snackbar, setSnackbar] = React.useState<any>({
-    open: false,
-    vertical: 'top',
-    horizontal: 'center',
-  });
+  // const [snackbar, setSnackbar] = React.useState<any>({
+  //   open: false,
+  //   vertical: 'top',
+  //   horizontal: 'center',
+  // });
 
-  const {
-    values, isLoading, error,
-  } = state;
+  const { values } = state;
 
-  const { vertical, horizontal, open } = snackbar;
+  // const { vertical, horizontal, open } = snackbar;
 
-  const handleClick = (newState: SnackbarOrigin) => () => {
-    setSnackbar({ ...newState, open: true });
-  };
-
-  const handleClose = () => {
-    setSnackbar({ ...state, open: false });
-  };
+  // const handleClick = (newState: SnackbarOrigin) => () => {
+  //   setSnackbar({ ...newState, open: true });
+  // };
+  //
+  // const handleClose = () => {
+  //   setSnackbar({ ...state, open: false });
+  // };
 
   const [touched, setTouched] = useState({
     email: undefined,
@@ -44,15 +42,16 @@ const FeedbackForm: FC = () => {
     tel: undefined,
     name: undefined,
   });
+  console.log(touched);
 
   const onSubmit = async (data: any) => {
     try {
-      // await sendContactForm(values);
+      await sendContactForm(values);
       setTouched({
         email: undefined, message: undefined, tel: undefined, name: undefined,
       });
       setState(initState);
-      handleClick({ vertical: 'top', horizontal: 'center' });
+      // handleClick({ vertical: 'top', horizontal: 'center' });
     } catch (err) {
       setState((prev) => ({
         ...prev,

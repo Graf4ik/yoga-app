@@ -3,6 +3,7 @@ import { Box, Tab, Tabs } from '@mui/material';
 import { services } from 'shared/constants/services';
 
 interface TabPanelProps {
+  // eslint-disable-next-line react/require-default-props
   children?: React.ReactNode;
   index: number;
   value: number;
