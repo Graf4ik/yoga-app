@@ -1,13 +1,12 @@
 import Head from 'next/head';
-import {
-  Box, Image, Text,
-} from '@chakra-ui/react';
 import Heading from 'components/Heading/Heading';
 import Form from 'components/Forms/FeedbackForm';
 import PhotoGallery from 'components/PhotoGallery/PhotoGallery';
 import LocationMap from 'components/LocationMap/LocationMap';
 import Messengers from 'components/Messengers/Messengers';
+import { Box, Typography } from '@mui/material';
 import styles from './Home.module.scss';
+import ContactsMain from './contacts/Contacts';
 
 const Home = () => (
   <Box>
@@ -16,24 +15,24 @@ const Home = () => (
     </Head>
     <Heading text="Кто я" />
     <Box className={styles.about}>
-      <Text className={styles.about__title}>
+      <Typography className={styles.about__title}>
         Екатерина Графова -
         сертифицированный преподаватель Федерации Йоги России по
         направлению Хатха-йога (YTTC-200).
-      </Text>
-      <Text className={styles.about_paragraph}>
+      </Typography>
+      <Typography className={styles.about_paragraph}>
         Преподаватель кундалини йоги, йога-нидры. Проводит сеансы гвоздетерапии с применением
         знаний и
         навыков психологии.
         Организатор и ведущая ретритных трансформационных авторских программы, Он-Лайн
         курсов по
         наули-крии и медитации.
-      </Text>
+      </Typography>
     </Box>
     <Heading text="Задать вопрос" />
     <Box className={styles.questions}>
       <Box className={styles.question__block}>
-        <Image
+        <img
           className={styles.questionImg}
           src="/photos/7.jpg"
           alt="questionImg"
@@ -51,12 +50,7 @@ const Home = () => (
         <LocationMap />
       </Box>
       <Box className={styles.contacts__block}>
-        <Text className={styles.contacts__title}>Адрес проведения занятий:</Text>
-        <Text>г. Москва, Болотная наб., 15</Text>
-        <Text className={styles.contacts__title}>Телефон:</Text>
-        <Text>+7916999999</Text>
-        <Text className={styles.contacts__title}>E-mail:</Text>
-        <Text>katerina-grafova@mail.ru</Text>
+        <ContactsMain />
       </Box>
     </Box>
     <Messengers />

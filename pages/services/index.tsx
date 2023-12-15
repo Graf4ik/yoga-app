@@ -1,8 +1,11 @@
-import { Box } from '@chakra-ui/react';
+import { Box } from '@mui/material';
+import Heading from 'components/Heading/Heading';
+import { TabsComponent } from 'components/Tabs/Tabs';
 
 const Services = () => (
   <Box>
-    Раздел находится в разработке...
+    <Heading text="Услуги" />
+    <TabsComponent />
   </Box>
 );
 

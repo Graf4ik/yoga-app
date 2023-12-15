@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react';
-import { Box } from '@chakra-ui/react';
+import { Box } from '@mui/material';
 import styles from './Layout.module.scss';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';

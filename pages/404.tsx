@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import Head from 'next/head';
 import Heading from 'components/Heading/Heading';
-import { Box } from '@chakra-ui/react';
+import { Box } from '@mui/material';
 
 const Error = () => {
   const router = useRouter();

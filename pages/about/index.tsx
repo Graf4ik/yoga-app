@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import Heading from 'components/Heading/Heading';
-import {
-  Box, Image, Text,
-} from '@chakra-ui/react';
+import { Box, Typography } from '@mui/material';
 import styles from './About.module.scss';
 
 const About = () => (
@@ -13,20 +11,20 @@ const About = () => (
     <Heading text="Обо мне" />
     <Box className={styles.about}>
       <Box className={styles.about__block}>
-        <Image className={styles.about__image} src="/photos/1.jpg" alt="yoga" />
+        <img className={styles.about__image} src="/photos/1.jpg" alt="yoga" />
       </Box>
       <Box className={styles.about__block}>
         <Box className={styles.about__inner}>
-          <Text className={styles.about__text}>
+          <Typography className={styles.about__text}>
             В йогу пришла  более 9 лет назад, а пришла потому что, стал пропадать внутренний интере
             к себе и к жизни. Поэтому на собственном опыте знаю, как техники йоги трансформируют
             сознание, а как следствие трансформируют внешнюю жизнь. Внешнее - отражение внутреннего.
             Моя личная практика включает в себя Кундалини,Хатха йогу, гвоздестояние, джапу,
             медитацию. Посещаю семинары, ретриты, мастер-классы, нахожусь в постоянном развитии,
             ведь йога — это наука, не имеющая границ.
-          </Text>
+          </Typography>
 
-          <Text className={styles.about__text}>
+          <Typography className={styles.about__text}>
             <span className={styles.about__title}>На моих классах будем осваивать:</span>
             <br />
             • асаны хатха-йоги, где большое внимание уделяю грамотной отстройке и травмобезопасности;
@@ -34,9 +32,9 @@ const About = () => (
             • базовые типы дыхания, делая свои вдохи и выдохи более осознанными;
             <br />
             • техники медитации.
-          </Text>
+          </Typography>
 
-          <Text className={styles.about__text}>
+          <Typography className={styles.about__text}>
             Свои практики я направляю на гармонизацию внутреннего и внешнего пространства ученика,
             делюсь своим опытом и знаниями. Наполняя свою жизнь качественными эмоциями, ощущая тонкие вибрации,
             состояние благости и любви ко всему живому, человек автоматически перестаёт тратить свое драгоценное
@@ -52,7 +50,7 @@ const About = () => (
             литература; прогулки на природе; путешествия; преподавание и обратная связь от учеников; душевные беседы.
 
             Для меня йога — это путь к себе. Познание своей многогранности, уникальности и своей божественной природы.
-          </Text>
+          </Typography>
         </Box>
       </Box>
     </Box>

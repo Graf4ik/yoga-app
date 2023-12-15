@@ -1,8 +1,10 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Typography } from '@mui/material';
+import Heading from 'components/Heading/Heading';
 
 const Feedbacks = () => (
   <Box>
-    Раздел находится в разработке...
+    <Heading text="Отзывы" />
+    <Typography sx={{ color: '#000' }}>Раздел находится в разработке...</Typography>
   </Box>
 );
 

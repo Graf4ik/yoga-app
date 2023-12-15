@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { Text } from '@chakra-ui/react';
+import { Typography } from '@mui/material';
 import styles from './Footer.module.scss';
 
 const Footer:FC = () => (
   <footer className={styles.footer}>
-    <Text>Created by Graf</Text>
+    <Typography>Created by Graf</Typography>
   </footer>
 );
 

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styles from 'pages/home/Home.module.scss';
-import { Box } from '@chakra-ui/react';
+import { Box } from '@mui/material';
 
 interface HeadingProps {
   text: string;

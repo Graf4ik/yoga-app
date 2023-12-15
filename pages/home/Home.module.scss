@@ -6,8 +6,6 @@
 
 .questions {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 
   .question__block {
     .questionImg {
@@ -15,12 +13,11 @@
       width: 100%;
     }
 
+    &:first-child {
+      margin-right: 5%;
+    }
     &:last-child {
-      margin-right: 10%;
-
-      input {
-        width: 500px;
-      }
+      width: 500px;
     }
   }
 }
@@ -69,6 +66,8 @@
   flex-wrap: wrap;
 
   &__block {
+    color: #000;
+
     .contacts__title {
       font-weight: 700;
       font-size: 22px;
@@ -82,18 +81,43 @@
 }
 
 .messengers {
-  width: 55px;
-  height: 55px;
   position: fixed;
   bottom: 50px;
   right: 40px;
 
-  .iconMessage {
-    height: 30px;
+  .open {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .closed {
+    display: none;
+  }
+
+  .messengersBtn {
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+    background: #68D391;
+    cursor: pointer;
+  }
+
+  .backgroundBtn {
+    background: #fff;
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.75);
+  }
+
+  .iconMessageImg {
+    margin: 12px;
+    width: 30px;
   }
 
   .iconSocial {
-    height: 35px;
+    width: 27px;
     margin-top: 6px;
   }
 }
@@ -101,6 +125,7 @@
 @media (max-width: 1160px) {
   .questions {
     justify-content: flex-start;
+    flex-wrap: wrap;
 
     .question__block {
       justify-content: flex-start;
@@ -141,9 +166,7 @@
   .questions {
     .question__block {
       &:last-child {
-        input {
-          width: 300px;
-        }
+        width: 100%;
       }
     }
   }
@@ -156,6 +179,8 @@
   .questions {
     .question__block {
       &:last-child {
+        width: 70%;
+
         input {
           width: 220px;
         }

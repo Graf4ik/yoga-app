@@ -2,7 +2,8 @@ import Head from 'next/head';
 import { FC } from 'react';
 import Heading from 'components/Heading/Heading';
 import Socials from 'components/Socials/Socials';
-import { Box, Link, Spacer } from '@chakra-ui/react';
+import { Box } from '@mui/material';
+import Link from 'next/link';
 import { SocialsType } from '../../shared/interfaces/interfaces';
 import styles from './Contacts.module.scss';
 
@@ -38,14 +39,13 @@ const Contacts:FC<SocialsTypeProps> = ({ socials }) => (
     <Box className={styles.contacts}>
       <Heading text="Контакты:" />
       <Link className={styles.tel} href="tel:+79261891973">Tel: +7 926 189 19 73</Link>
-      <Spacer />
       <Link className={styles.whatsApp} href="https://api.whatsapp.com/send?phone=79261891973">
         Написать в
         WhatsApp
       </Link>
-      <Spacer />
+      <br />
       <Link className={styles.telegram} href="http://t.me/EkaterinaGrafova">Написать в Telegram</Link>
-      <Spacer />
+      <br />
       <Link href="mailto:katerina-grafova@mail.ru">katerina-grafova@mail.ru</Link>
       <br />
       <Box className={styles.socials}>

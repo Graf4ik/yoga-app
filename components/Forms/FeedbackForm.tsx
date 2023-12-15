@@ -1,17 +1,9 @@
 import React, { FC, useState } from 'react';
-import {
-  Box,
-  Button,
-  FormControl,
-  FormErrorMessage,
-  FormLabel,
-  Input,
-  Text,
-  Textarea,
-  useToast,
-} from '@chakra-ui/react';
 import { sendContactForm } from 'lib/api';
-import { IFormContact } from '../../shared/interfaces/interfaces';
+import {
+  Box, Button, FormControl, SnackbarOrigin, TextField,
+} from '@mui/material';
+import { IFormContact } from 'shared/interfaces/interfaces';
 
 const initValues: IFormContact = {
   name: '',
@@ -25,30 +17,42 @@ const initValues: IFormContact = {
 const initState = { values: initValues };
 
 const FeedbackForm: FC = () => {
-  const toast = useToast();
-  const [state, setState] = useState(initState);
+  const [state, setState] = React.useState<any>(initState);
+  const [snackbar, setSnackbar] = React.useState<any>({
+    open: false,
+    vertical: 'top',
+    horizontal: 'center',
+  });
+
+  const {
+    values, isLoading, error,
+  } = state;
+
+  const { vertical, horizontal, open } = snackbar;
+
+  const handleClick = (newState: SnackbarOrigin) => () => {
+    setSnackbar({ ...newState, open: true });
+  };
+
+  const handleClose = () => {
+    setSnackbar({ ...state, open: false });
+  };
+
   const [touched, setTouched] = useState({
     email: undefined,
     message: undefined,
     tel: undefined,
     name: undefined,
   });
-  // @ts-ignore
-  const { values, isLoading, error } = state;
 
   const onSubmit = async (data: any) => {
     try {
-      await sendContactForm(values);
+      // await sendContactForm(values);
       setTouched({
         email: undefined, message: undefined, tel: undefined, name: undefined,
       });
       setState(initState);
-      toast({
-        title: 'Ваш вопрос успешно отправлен.',
-        status: 'success',
-        duration: 2000,
-        position: 'top',
-      });
+      handleClick({ vertical: 'top', horizontal: 'center' });
     } catch (err) {
       setState((prev) => ({
         ...prev,
@@ -71,91 +75,112 @@ const FeedbackForm: FC = () => {
   const onBlur = ({ target }) => setTouched((prev) => ({ ...prev, [target.name]: true }));
 
   return (
-    <Box>
-      {error && (
-        <Text color="red.300" my={4} fontSize="xl">
-          {error}
-        </Text>
-      )}
-      <FormControl isRequired mb={5} isInvalid={touched.name && !values.name}>
-        <FormLabel>ФИО</FormLabel>
-        <Input
-          borderColor="grey"
-          variant="flushed"
-          type="text"
-          name="name"
-          placeholder="Введите ваше ФИО"
-          errorBorderColor="red.300"
-          value={values.name}
-          onChange={handleChange}
-          onBlur={onBlur}
-        />
-        <FormErrorMessage>
-          Это поле обязательно для заполнения
-        </FormErrorMessage>
-      </FormControl>
+    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+      {/* {error && ( */}
+      {/*   <Typography color="red.300" my={4} fontSize="xl"> */}
+      {/*     {error} */}
+      {/*   </Typography> */}
+      {/* )} */}
+      <form>
+        <FormControl size="medium">
+          <TextField
+            type="text"
+            label="ФИО"
+            variant="outlined"
+            name="name"
+            placeholder="Введите ваше ФИО"
+            value={values?.name}
+            onChange={handleChange}
+            onBlur={onBlur}
+          />
+          <Box>
+            Это поле обязательно для заполнения
+          </Box>
+        </FormControl>
 
-      <FormControl isRequired mb={5} isInvalid={touched.email && !values.email}>
-        <FormLabel>Email</FormLabel>
-        <Input
-          borderColor="grey"
-          variant="flushed"
-          type="email"
-          name="email"
-          placeholder="Введите ваш email"
-          value={values.email}
-          onChange={handleChange}
-          onBlur={onBlur}
-        />
-        <FormErrorMessage>
-          Это поле обязательно для заполнения
-        </FormErrorMessage>
-      </FormControl>
+        <FormControl size="medium">
+          <TextField
+            type="email"
+            name="email"
+            label="Email"
+            variant="outlined"
+            placeholder="Введите ваш email"
+            value={values?.email}
+            onChange={handleChange}
+            onBlur={onBlur}
+          />
+          <Box>
+            Это поле обязательно для заполнения
+          </Box>
+        </FormControl>
 
-      <FormControl isRequired mb={5} isInvalid={touched.tel && !values.tel}>
-        <FormLabel>Телефон</FormLabel>
-        <Input
-          borderColor="grey"
-          variant="flushed"
-          type="tel"
-          name="tel"
-          placeholder="Введите ваш телефон"
-          value={values.tel}
-          onChange={handleChange}
-          onBlur={onBlur}
-        />
-        <FormErrorMessage>
-          Это поле обязательно для заполнения
-        </FormErrorMessage>
-      </FormControl>
+        <FormControl size="medium">
+          <TextField
+            type="tel"
+            name="tel"
+            label="Телефон"
+            variant="outlined"
+            placeholder="Введите ваш телефон"
+            value={values?.tel}
+            onChange={handleChange}
+            onBlur={onBlur}
+          />
+          <Box>
+            Это поле обязательно для заполнения
+          </Box>
+        </FormControl>
 
-      <FormControl isRequired mb={5} isInvalid={touched.message && !values.message}>
-        <FormLabel>Вопрос</FormLabel>
-        <Textarea
-          borderColor="grey"
-          variant="flushed"
-          name="message"
-          placeholder="Введите ваш вопрос"
-          rows={4}
-          errorBorderColor="red.300"
-          value={values.message}
-          onChange={handleChange}
-          onBlur={onBlur}
-        />
-        <FormErrorMessage>
-          Это поле обязательно для заполнения
-        </FormErrorMessage>
-      </FormControl>
+        <FormControl size="medium">
+          <TextField
+            label="Вопрос"
+            name="message"
+            placeholder="Введите ваш вопрос"
+            multiline
+            fullWidth
+            rows={6}
+            sx={{
+              border: 'none',
+              borderRadius: '8px',
+              width: '100%',
+            }}
+            value={values?.message}
+            onChange={handleChange}
+            onBlur={onBlur}
+          />
+          <Box>
+            Это поле обязательно для заполнения
+          </Box>
+        </FormControl>
 
-      <Button
-        variant="outline"
-        colorScheme="blue"
-        isLoading={isLoading}
-        onClick={onSubmit}
-        disabled={!values.name || !values.email || !values.tel}
-      >
-        Отправить
-      </Button>
+        <Box>
+          <Button
+            variant="contained"
+            size="large"
+            onClick={onSubmit}
+          >
+            Отправить
+          </Button>
+        </Box>
+      </form>
+
+      <Box sx={{ width: 500 }}>
+        {/* <Snackbar */}
+        {/*   // anchorOrigin={{ vertical, horizontal }} */}
+        {/*   open={open} */}
+        {/*   // variant="filled" */}
+        {/*   // onClose={handleClose} */}
+        {/*   message="I love snacks" */}
+        {/*   // key={vertical + horizontal} */}
+        {/*   // sx={{ */}
+        {/*   //   color: '#000', */}
+        {/*   // }} */}
+        {/* > */}
+        {/*   <Alert onClose={handleClose} severity="success" sx={{ width: '100%', color: '#000' }}> */}
+        {/*     This is a success message! */}
+        {/*   </Alert> */}
+        {/*   <Alert severity="error">Произошла ошибка запроса</Alert> */}
+        {/* </Snackbar> */}
+      </Box>
     </Box>
   );
 };
